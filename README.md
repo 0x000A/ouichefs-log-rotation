@@ -8,3 +8,17 @@ The mechanisms are added as kernel modules to the system, two policies are suppo
 Server software such as web servers typically log every event, request and error to log files, this can rapidly eat up all available space.  
 A common approach to managing log files is to have a regularly scheduled **log rotation**, typically a **cron** job that runs the **logrotate** command that renames, deletes or archives the files once they are too old or too big.  
 Another approach that it is easier and requires less configuration is to use a log rotation capable file system.
+
+## Installation
+Download **ouichefs-log-rotation**
+```
+git clone https://github.com/0x000A/ouichefs-log-rotation.git
+```
+Download **ouichefs** file system
+```
+cd ouichefs-log-rotation && git clone https://github.com/rgouicem/ouichefs.git
+```
+Patch **ouichefs** file system
+```
+cp patch.txt ouichefs && cd ouichefs && patch -p1 < patch.txt
+```
