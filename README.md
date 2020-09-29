@@ -21,3 +21,7 @@ git clone https://github.com/rgouicem/ouichefs.git
 cp patch.txt ouichefs && cd ouichefs
 patch -p1 < patch.txt
 ```
+Build `mkfs.ouichefs` and create a **ouichefs** partition
+```
+cd mkfs && make
+```
