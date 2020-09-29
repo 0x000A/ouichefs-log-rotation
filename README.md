@@ -14,11 +14,10 @@ Download **ouichefs-log-rotation**
 ```
 git clone https://github.com/0x000A/ouichefs-log-rotation.git
 ```
-Download **ouichefs** file system
+Download and patch **ouichefs** file system
 ```
-cd ouichefs-log-rotation && git clone https://github.com/rgouicem/ouichefs.git
-```
-Patch **ouichefs** file system
-```
-cp patch.txt ouichefs && cd ouichefs && patch -p1 < patch.txt
+cd ouichefs-log-rotation
+git clone https://github.com/rgouicem/ouichefs.git
+cp patch.txt ouichefs && cd ouichefs
+patch -p1 < patch.txt
 ```
