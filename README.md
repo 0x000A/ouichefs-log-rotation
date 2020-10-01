@@ -28,7 +28,7 @@ make
 insmod ouichefs.ko
 ```
 Build `mkfs.ouichefs` and create a **ouichefs** partition  
-***NOTE**: This created a partition of 50 MiB, you can modify the size by changing **count** value in the **dd** command*
+***NOTE**: This creates a partition of 50 MiB, you can modify the size by changing **count** value in the **dd** command*
 ```
 cd mkfs && make
 dd if=/dev/zero of=test.img bs=1M count=50
