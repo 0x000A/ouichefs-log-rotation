@@ -34,4 +34,8 @@ cd mkfs && make
 dd if=/dev/zero of=test.img bs=1M count=50
 mkfs.ouichefs test.img
 ```
-
+Mount the partition  
+***NOTE**: This mounts the partition to `/ouichefs`*
+```
+mount test.img /ouichefs
+```
