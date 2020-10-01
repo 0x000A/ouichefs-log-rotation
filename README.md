@@ -21,17 +21,17 @@ git clone https://github.com/rgouicem/ouichefs.git
 cp patch.txt ouichefs && cd ouichefs
 patch -p1 < patch.txt
 ```
-Build and insert the **ouichefs**
-NOTE: If you wish to build the module against a different kernel, run `make KERNELDIR=<path>`
+Build and insert the **ouichefs**  
+***NOTE**: If you want to build the module against a different kernel, run `make KERNELDIR=<path>`*
 ```
 make
 insmod ouichefs.ko
 ```
-Build `mkfs.ouichefs` and create a **ouichefs** partition
+Build `mkfs.ouichefs` and create a **ouichefs** partition  
+***NOTE**: This created a partition of 50 MiB, you can modify the size by changing **count** value in the **dd** command*
 ```
 cd mkfs && make
-```
-Create and mount a **ouichefs** partition
-```
+dd if=/dev/zero of=test.img bs=1M count=50
+mkfs.ouichefs test.img
 ```
 
