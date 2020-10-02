@@ -21,7 +21,7 @@ git clone https://github.com/rgouicem/ouichefs.git
 cp patch.txt ouichefs && cd ouichefs
 patch -p1 < patch.txt
 ```
-Build and insert the **ouichefs**  
+Build and insert **ouichefs** file system  
 ***NOTE**: If you want to build the module against a different kernel, run `make KERNELDIR=<path>`*
 ```
 make
