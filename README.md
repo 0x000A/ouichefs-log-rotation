@@ -31,11 +31,11 @@ Build `mkfs.ouichefs` and create a **ouichefs** partition
 ***NOTE**: This creates a partition of 50 MiB, you can modify the size by changing **count** value in the **dd** command*
 ```
 cd mkfs && make
-dd if=/dev/zero of=test.img bs=1M count=50
-mkfs.ouichefs test.img
+dd if=/dev/zero of=ouichefs.img bs=1M count=50
+mkfs.ouichefs ouichefs.img
 ```
 Mount the partition  
 ***NOTE**: This mounts the partition to `/ouichefs`*
 ```
-mount test.img /ouichefs
+mount ouichefs.img /ouichefs
 ```
