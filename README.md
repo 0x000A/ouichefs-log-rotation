@@ -32,7 +32,7 @@ Build `mkfs.ouichefs` and create a **ouichefs** partition
 ```
 cd mkfs && make
 dd if=/dev/zero of=ouichefs.img bs=1M count=50
-mkfs.ouichefs ouichefs.img
+./mkfs.ouichefs ouichefs.img
 ```
 Mount the partition  
 ***NOTE**: This mounts the partition to `/ouichefs`*
