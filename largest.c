@@ -141,7 +141,7 @@ void clean_blocks(struct super_block *sb)
 		return;
 	}
 
-	pr_info("removing inode :%ld\n", max_inode->i_ino);
+	pr_info("removing inode: %ld\n", max_inode->i_ino);
 	dentry.d_inode = max_inode;
 	max_inode->i_op->unlink(dir_inode, &dentry);
 	iput(max_inode);
@@ -199,7 +199,7 @@ int policy(struct inode *dir, struct ouichefs_dir_block *dblock)
 		return -1;
 	}
 
-	pr_info("removing inode :%ld\n", max_inode->i_ino);
+	pr_info("removing inode: %ld\n", max_inode->i_ino);
 	dentry.d_inode = max_inode;
 	max_inode->i_op->unlink(dir, &dentry);
 	iput(max_inode);
