@@ -39,3 +39,13 @@ Mount the partition
 ```
 mount ouichefs.img /ouichefs
 ```
+Build the policies  
+***NOTE**: If you want to build the modules against a different kernel, run `make KERNELDIR=<path>`*
+```
+cd ../..
+make
+```
+Insert a policy
+```
+insmod oldest.ko
+```
