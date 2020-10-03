@@ -51,7 +51,8 @@ insmod oldest.ko
 ```
 ## Tests
 It's highly recommended to use a **ouichefs** partition only for the tests and this is what we will be doing here.  
-Create a **ouichefs** partition for the tests.
+  
+Create a **ouichefs** partition for the tests.  
 ***NOTE**: This creates a partition of 50 MiB, you can modify the size by changing **count** value in the **dd** command*
 ```
 cd ouichefs/mkfs
