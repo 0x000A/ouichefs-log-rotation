@@ -286,7 +286,7 @@ ssize_t ouichefs_store(
 
 static struct kobj_attribute kernel = __ATTR_WO(ouichefs);
 
-static int __init rotation_init(void)
+static int __init oldest_init(void)
 {
 	struct super_block *sb;
 	struct ouichefs_sb_info *sbi;
@@ -304,13 +304,13 @@ static int __init rotation_init(void)
 
 	return 0;
 }
-module_init(rotation_init);
+module_init(oldest_init);
 
-static void __exit rotation_exit(void)
+static void __exit oldest_exit(void)
 {
 	pr_info("Oldest modified file policy removed from ouichefs\n");
 	iterate_supers_type(ouichefs, remove_policy, NULL);
 	sysfs_remove_file(kernel_kobj, &kernel.attr);
 }
-module_exit(rotation_exit);
+module_exit(oldest_exit);
 
