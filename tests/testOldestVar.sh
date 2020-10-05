@@ -7,7 +7,6 @@ tests=20
 
 
 
-
 # Disable dmesg
 dmesg -D
 
@@ -23,9 +22,8 @@ rmmod -f ouichefs
 
 
 # Mount ouichefs parition
-insmod ../../ouichefs/ouichefs.ko
-mount "../../ouichefs/mkfs/test.img" $partition
-
+insmod ../ouichefs/ouichefs.ko
+mount "../ouichefs/mkfs/test.img" $partition
 
 
 # Create files for tests
@@ -38,7 +36,6 @@ do
 done
 
 
-
 # Store files with the oldest modification dates in an array
 oldest_files=($(ls -t "$partition/test" | tail -$tests | tac))
 
@@ -49,19 +46,19 @@ oldest_files=($(ls -t "$partition/test" | tail -$tests | tac))
 echo 3 > /proc/sys/vm/drop_caches
 
 
-
 # Make sure that the directory has 128 file at the start
 assert "ls -1 $partition/test | wc -l" "128"
 assert_end "count_before_deletion" 
 
 
 # Start the tests
-insmod ../../oldest.ko
+insmod ../oldest.ko "x=80" 
+
 
 # Make sure that the right files get deleted each time
 i=0
 for file in "${oldest_files[@]}"; do
-	touch $partition/test/new_$i
+	echo "1" > "/sys/kernel/ouichefs"
 	assert "[ -f '/$partition/test/$file' ] || echo 'NOT FOUND'" "NOT FOUND"
 	((i+=1))
 done
@@ -72,7 +69,7 @@ assert_end "remove_oldest_file"
 
 # Clean up everything
 {
-rmmod oldest
+rmmod oldest 
 rm -rf $partition/*
 umount $partition 
 rmmod -f ouichefs

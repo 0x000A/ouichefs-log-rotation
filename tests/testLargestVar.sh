@@ -7,7 +7,6 @@ tests=20
 
 
 
-
 # Disable dmesg
 dmesg -D
 
@@ -23,9 +22,8 @@ rmmod -f ouichefs
 
 
 # Mount ouichefs parition
-insmod ../../ouichefs/ouichefs.ko
-mount "../../ouichefs/mkfs/test.img" $partition
-
+insmod ../ouichefs/ouichefs.ko
+mount "../ouichefs/mkfs/test.img" $partition
 
 
 # Create files for tests
@@ -38,16 +36,13 @@ do
 done
 
 
-
 # Store files with the oldest modification dates in an array
 largest_files=($(ls -S "$partition/test" | head -$tests))
-
 
 
 # The touch command increases inode's i_counter so we have to get rid of the
 # cache in order to reset all inode's counters to 0
 echo 3 > /proc/sys/vm/drop_caches
-
 
 
 # Make sure that the directory has 128 file at the start
@@ -56,7 +51,8 @@ assert_end "count_before_deletion"
 
 
 # Start the tests
-insmod ../../largest.ko "x=80" 
+insmod ../largest.ko "x=80" 
+
 
 # Make sure that the right files get deleted each time
 i=0
