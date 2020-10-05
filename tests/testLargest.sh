@@ -53,6 +53,7 @@ assert_end "count_before_deletion"
 # Start the tests
 insmod ../largest.ko
 
+
 # Make sure that the right files get deleted each time
 i=0
 for file in "${largest_files[@]}"; do
