@@ -59,3 +59,10 @@ cd ouichefs/mkfs
 dd if=/dev/zero of=test.img bs=1M count=50
 ./mkfs.ouichefs test.img
 ```
+Run the tests
+```
+cd ../../tests
+./testAll.sh
+```
+
+## Usage
