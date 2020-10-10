@@ -1,6 +1,6 @@
 KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 
-obj-m += largest.o
+obj-m += src/largest.o src/oldest.o
 
 all :
 	make -C $(KERNELDIR) M=$(PWD) modules
