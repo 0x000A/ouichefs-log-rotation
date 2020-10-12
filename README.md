@@ -12,11 +12,10 @@ Another approach that is easier and requires less configuration is to use a log 
 ## Installation
 Download **ouichefs-log-rotation**
 ```
-git clone https://github.com/0x000A/ouichefs-log-rotation.git
+git clone https://github.com/0x000A/ouichefs-log-rotation.git && cd ouichefs-log-rotation
 ```
 Download and patch **ouichefs** file system
 ```
-cd ouichefs-log-rotation
 git clone https://github.com/rgouicem/ouichefs.git
 cp patch.txt ouichefs && cd ouichefs
 patch -p1 < patch.txt
