@@ -13,7 +13,7 @@ Another approach that is easier and requires less configuration is to use a log 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-The project was tested only the **linux kernel 4.19**.
+The project was tested only on the **linux kernel 4.19**.
 
 ### Installation
 Download **ouichefs-log-rotation**
