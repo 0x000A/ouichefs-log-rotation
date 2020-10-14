@@ -9,7 +9,13 @@ Server software such as web servers typically log every event, request and error
 A common approach to managing log files is to have a regularly scheduled **log rotation**, typically a **cron** job that runs the **logrotate** command that renames, deletes or archives the files once they are too old or too big.  
 Another approach that is easier and requires less configuration is to use a log rotation capable file system.
 
-## Installation
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+The project was tested only the **linux kernel 4.19**.
+
+### Installation
 Download **ouichefs-log-rotation**
 ```
 git clone https://github.com/0x000A/ouichefs-log-rotation.git && cd ouichefs-log-rotation
@@ -48,7 +54,7 @@ Insert a policy
 ```
 insmod oldest.ko
 ```
-## Tests
+## Running the tests
 It's highly recommended to use a **ouichefs** partition only for the tests and this is what we will be doing here.  
   
 Create a **ouichefs** partition for the tests.  
