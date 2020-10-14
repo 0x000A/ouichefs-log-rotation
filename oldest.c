@@ -313,4 +313,3 @@ static void __exit oldest_exit(void)
 	sysfs_remove_file(kernel_kobj, &kernel.attr);
 }
 module_exit(oldest_exit);
-

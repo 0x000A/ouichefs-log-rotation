@@ -65,3 +65,13 @@ cd ../../tests
 ```
 
 ## Usage
+Once a policy is added, it is triggered whenever:
+- a directory goes out of **inodes**.
+- a directory has only **x% inodes** left, **x** can be set at module insertion:
+```
+insmod oldest.ko x=10
+```
+- by manually triggering the policy:
+```
+echo -n 1 > /sys/kernel/oldest
+```

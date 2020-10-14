@@ -306,4 +306,3 @@ static void __exit rotation_exit(void)
 	sysfs_remove_file(kernel_kobj, &kernel.attr);
 }
 module_exit(rotation_exit);
-
