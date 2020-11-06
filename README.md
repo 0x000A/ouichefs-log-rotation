@@ -1,6 +1,6 @@
 # ouichefs-log-rotation
 Adds log rotation mechanisms to the Ouichefs file system  
-The mechanisms are added as kernel modules to the system, two policies are supported:
+The mechanisms are added as linux kernel modules to the system, two policies are supported:
 - Deleting the oldest file.
 - Deleting the largest file.
 
